@@ -5,13 +5,19 @@ using namespace std;
 
 vector<long long> nextLargerElement(vector<long long> arr, int n){
     
-    vector<long long> v;
+        vector<long long> v;
     stack<long long> st;
-    v.push(-1)
-    st.push(-1);
-    for(int i=n-2;i>=0;i--){
-        while(!st.empty() && )
+    v.push_back(-1);
+    st.push(arr[n-1]);
+    for(long long i=n-2;i>=0;i--){
+        while(!st.empty() && arr[i]>=st.top() )
+        st.pop();
+        long long nextgreater = st.empty()?-1:st.top();
+        v.push_back(nextgreater);
+        st.push(arr[i]);
     }
+    reverse(v.begin(),v.end());
+    return v;
         
 }
 int main(){
