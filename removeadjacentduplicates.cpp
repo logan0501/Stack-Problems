@@ -20,6 +20,6 @@ string removeDuplicates(string s) {
     return str;
 }
 int main(){
-
+    
     return 0;
 }
